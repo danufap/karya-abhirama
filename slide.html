@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>slide</title>
+    <link rel="stylesheet" href="css/slide.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="slide">
+        <div class="fade">
+          <div class="nomer">1</div>
+          <img src="img/main2.png" alt="" />
+          <div class="text">ya</div>
+        </div>
+
+        <div class="fade">
+          <div class="nomer">2</div>
+          <img src="img/main22.png" alt="" />
+          <div class="text">yaa</div>
+        </div>
+
+        <div class="fade">
+          <div class="nomer">3</div>
+          <img src="img/main222.png" alt="" />
+          <div class="text">yaaa</div>
+        </div>
+
+        <a class="prev" onClick="nextslide(-1)">&#10094;</a>
+        <a class="next" onClick="nextslide(1)">&#10095;</a>
+      </div>
+    </div>
+    <script>
+        var slideIndex = 1 
+            showSlide(slideIndex);
+
+        function nextslide(n){
+            showSlide(slideIndex += n);
+        }
+        function showSlide(n){
+            var i;
+            var slides = document.getElementsByClassName
+            ("fade");
+
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+
+            for (i = 0; i < slides.length; i++){
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+        }
+    </script>
+  </body>
+</html>
